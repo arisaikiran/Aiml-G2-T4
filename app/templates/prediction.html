@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .results-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            gap: 20px;
+        }
+
+        .result-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            width: 45%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .predict-btn {
+            background-color: #4CAF50;  /* Green */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .predict-btn:hover {
+            background-color: #45a049;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .single-result {
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Results</h1>
+        
+        <!-- Display Uploaded Image -->
+        <div class="center">
+            <img src="{{ filepath }}" alt="Uploaded Image">
+        </div>
+
+        <!-- Display GAN-Augmented CNN Prediction -->
+        <div class="results-container {% if not show_normal %}single-result{% endif %}">
+            <div class="result-card">
+                <h2>Model: GAN-Augmented CNN</h2>
+                <p><strong>Prediction:</strong> {{ label_gan }}</p>
+                <p><strong>Confidence:</strong> {{ confidence_gan }}</p>
+                <p style="color: blue; font-weight: bold;">{{ message_gan }}</p>
+            </div>
+
+            {% if show_normal %}
+            <!-- Display Normal CNN Prediction -->
+            <div class="result-card">
+                <h2>Model: Normal CNN</h2>
+                <p><strong>Prediction:</strong> {{ label_normal }}</p>
+                <p><strong>Confidence:</strong> {{ confidence_normal }}</p>
+                <p style="color: blue; font-weight: bold;">{{ message_normal }}</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Display Button to Predict with Normal CNN -->
+        {% if not show_normal %}
+        <form action="{{ url_for('predict_normal') }}" method="POST">
+            <input type="hidden" name="image_path" value="{{ filepath }}">
+            <button type="submit" class="predict-btn">Predict with Normal CNN</button>
+        </form>
+        {% endif %}
+        
+        <!-- Link to Upload Another Image -->
+        <a href="{{ url_for('upload_image') }}">Upload another image</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>

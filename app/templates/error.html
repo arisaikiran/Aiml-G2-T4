@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style5.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<style>
+    h1{
+        font-size: large;
+        align-content: center;
+    }
+</style>
+<body>
+    <h1>Upload Error</h1>
+    <p style="color: red;">{{ message }}</p>
+    <a href="{{ url_for('upload_image') }}">Try Again</a>
+</body>
+</html>

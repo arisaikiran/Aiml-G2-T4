@@ -1,0 +1,57 @@
+/* style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('healthcare-and-medical-equipment-doodle-hand-drawn-seamless-pattern-vector.jpg'); /* Replace with your image URL */
+    background-size: contain;
+    background-position: center;
+    color: #000; /* Changed font color to black */
+}
+
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background with white */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Centered text */
+}
+
+h1 {
+    font-size: 3em; /* Added h1 styling for consistency */
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+a:hover {
+    background: #0056b3;
+}

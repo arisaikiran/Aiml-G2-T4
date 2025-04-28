@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRI Augmentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MRI Image Augmentation</h1>
+            <p>Generate augmented MRI scans using the Gradio interface.</p>
+        </header>
+
+        <section class="content">
+            <form id="mriForm">
+                <label for="seed">Enter Noise Seed:</label>
+                <input type="number" id="seed" name="seed" placeholder="Enter a number" min="1" required>
+
+                <button type="submit" id="submitButton">Generate Image</button>
+            </form>
+        </section>
+
+        <section class="result">
+            <h2>Generated MRI Image</h2>
+            <div id="imageResult">
+                <!-- This will show the generated MRI image -->
+                <img src="" alt="Generated MRI" id="generatedImage" style="display: none;">
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('mriForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const seedValue = document.getElementById('seed').value;
+            const imageResult = document.getElementById('imageResult');
+            const generatedImage = document.getElementById('generatedImage');
+
+            // Simulate form submission (replace with actual API call later)
+            imageResult.style.display = 'block';
+            generatedImage.style.display = 'none';
+
+            // Simulate image generation (Replace with your API call that returns an image URL)
+            setTimeout(function() {
+                generatedImage.src = `http://127.0.0.1:7860/generate_image/${seedValue}`;  // Gradio interface URL
+                generatedImage.style.display = 'block';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

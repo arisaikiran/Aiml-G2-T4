@@ -1,0 +1,9 @@
+PIL 
+numpy
+cv2
+werkzeug
+tensorflow.keras.models 
+pickle
+flask
+supabase
+python-dotnev

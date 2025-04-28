@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neural Network Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style3.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page-background"></div>
+    <div class="page-pattern"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Neural Network Visualization</h1>
+            <p class="subtitle">An elegant visualization of convolutional and generative adversarial neural network architectures for medical imaging analysis</p>
+        </header>
+        
+        <main class="workflows">
+            <!-- CNN Workflow Section -->
+            <div class="workflow-card cnn-workflow">
+                <span class="title-chip">Architecture</span>
+                <h2>CNN Workflow</h2>
+                
+                <div class="workflow-steps">
+                    <div class="step cnn-step" data-num="1">
+                        <div class="step-content">
+                            <div class="step-number">Step 1</div>
+                            <div class="step-name">Input</div>
+                            <div class="step-dimensions">128×128×3</div>
+                        </div>
+                    </div>
+                    <div class="step cnn-step" data-num="2">
+                        <div class="step-content">
+                            <div class="step-number">Step 2</div>
+                            <div class="step-name">Conv2D</div>
+                            <div class="step-dimensions">128×128×32</div>
+                        </div>
+                    </div>
+                    <div class="step cnn-step" data-num="3">
+                        <div class="step-content">
+                            <div class="step-number">Step 3</div>
+                            <div class="step-name">MaxPooling</div>
+                            <div class="step-dimensions">64×64×32</div>
+                        </div>
+                    </div>
+                    <div class="step cnn-step" data-num="4">
+                        <div class="step-content">
+                            <div class="step-number">Step 4</div>
+                            <div class="step-name">Conv2D</div>
+                            <div class="step-dimensions">64×64×64</div>
+                        </div>
+                    </div>
+                    <div class="step cnn-step" data-num="5">
+                        <div class="step-content">
+                            <div class="step-number">Step 5</div>
+                            <div class="step-name">MaxPooling</div>
+                            <div class="step-dimensions">32×32×64</div>
+                        </div>
+                    </div>
+                    <div class="step cnn-step" data-num="6">
+                        <div class="step-content">
+                            <div class="step-number">Step 6</div>
+                            <div class="step-name">Flatten</div>
+                            <div class="step-dimensions">1×128</div>
+                        </div>
+                    </div>
+                    <div class="step cnn-step" data-num="7">
+                        <div class="step-content">
+                            <div class="step-number">Step 7</div>
+                            <div class="step-name">Dense</div>
+                            <div class="step-dimensions">128</div>
+                        </div>
+                    </div>
+                    <div class="step cnn-step" data-num="8">
+                        <div class="step-content">
+                            <div class="step-number">Step 8</div>
+                            <div class="step-name">Output</div>
+                            <div class="step-dimensions">1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Upload Section -->
+            <div class="upload-card">
+                <span class="title-chip">Interface</span>
+                <h2>Upload MRI Scan</h2>
+                <p>Our analysis system uses advanced neural networks to process cardiovascular MRI scans for anomaly detection and classification.</p>
+                
+                <form class="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+                    <div class="file-drop-area">
+                        <span class="file-message">Drag & drop files here or click to browse</span>
+                        <input class="file-input" type="file" name="image" accept="image/*" required>
+                    </div>
+                    <button class="upload-button" type="submit">Upload & Analyze</button>
+                </form>
+                
+                <div class="supported-formats">
+                    <h3>Supported formats</h3>
+                    <div class="format-tags">
+                        <span class="format-tag">DICOM</span>
+                        <span class="format-tag">PNG</span>
+                        <span class="format-tag">JPEG</span>
+                        <span class="format-tag">TIFF</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GAN Workflow Section -->
+            <div class="workflow-card gan-workflow">
+                <span class="title-chip">Architecture</span>
+                <h2>GAN Workflow</h2>
+                
+                <div class="workflow-steps">
+                    <div class="step gan-step" data-num="1">
+                        <div class="step-content">
+                            <div class="step-number">Step 1</div>
+                            <div class="step-name">Latent Input</div>
+                            <div class="step-dimensions">100</div>
+                        </div>
+                    </div>
+                    <div class="step gan-step" data-num="2">
+                        <div class="step-content">
+                            <div class="step-number">Step 2</div>
+                            <div class="step-name">Dense</div>
+                            <div class="step-dimensions">128×32×32</div>
+                        </div>
+                    </div>
+                    <div class="step gan-step" data-num="3">
+                        <div class="step-content">
+                            <div class="step-number">Step 3</div>
+                            <div class="step-name">Reshape</div>
+                            <div class="step-dimensions">32×32×128</div>
+                        </div>
+                    </div>
+                    <div class="step gan-step" data-num="4">
+                        <div class="step-content">
+                            <div class="step-number">Step 4</div>
+                            <div class="step-name">Conv2DTranspose</div>
+                            <div class="step-dimensions">64×64×128</div>
+                        </div>
+                    </div>
+                    <div class="step gan-step" data-num="5">
+                        <div class="step-content">
+                            <div class="step-number">Step 5</div>
+                            <div class="step-name">Conv2DTranspose</div>
+                            <div class="step-dimensions">128×128×64</div>
+                        </div>
+                    </div>
+                    <div class="step gan-step" data-num="6">
+                        <div class="step-content">
+                            <div class="step-number">Step 6</div>
+                            <div class="step-name">Output</div>
+                            <div class="step-dimensions">128×128×3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p> <span id="current-year"></span></p>
+        </footer>
+    </div>
+    
+    <script>
+        // Simple script to set the current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Add animation classes with slight delay for each step
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step');
+            
+            steps.forEach((step, index) => {
+                setTimeout(() => {
+                    step.classList.add('animated');
+                }, 100 * index);
+            });
+            
+            // Simple file input enhancement
+            const fileInput = document.querySelector('.file-input');
+            const fileArea = document.querySelector('.file-drop-area');
+            const fileMessage = document.querySelector('.file-message');
+            
+            fileInput.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    fileMessage.textContent = this.files[0].name;
+                    fileArea.classList.add('has-file');
+                }
+            });
+            
+            // Drag and drop functionality
+            fileArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                fileArea.classList.add('is-dragover');
+            });
+            
+            fileArea.addEventListener('dragleave', function() {
+                fileArea.classList.remove('is-dragover');
+            });
+            
+            fileArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                fileArea.classList.remove('is-dragover');
+                if (e.dataTransfer.files.length) {
+                    fileInput.files = e.dataTransfer.files;
+                    fileMessage.textContent = e.dataTransfer.files[0].name;
+                    fileArea.classList.add('has-file');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

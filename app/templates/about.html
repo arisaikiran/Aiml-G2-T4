@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | MRI Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stethoscope-icon">
+                    <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path>
+                    <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path>
+                    <circle cx="20" cy="10" r="2"></circle>
+                </svg>
+                <span>MRI Predict</span>
+            </div>
+            <a href="/" class="nav-link">Home</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <section class="hero-section">
+                <h1>About Us</h1>
+                <p class="subtitle">Revolutionizing Healthcare with AI</p>
+            </section>
+
+            <section class="mission-section">
+                <div class="glass-card">
+                    <h2>Our Mission</h2>
+                    <p>
+                        We are dedicated to revolutionizing cardiovascular disease prediction using cutting-edge AI and deep learning technologies.
+                        By integrating GANs for data augmentation and CNNs for medical image analysis, we aim to enhance early diagnosis 
+                        and improve healthcare outcomes globally.
+                    </p>
+                </div>
+            </section>
+
+            <section class="team-section">
+                <h2>Meet Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member glass-card">
+                        <div class="member-image">
+                            <img src="static/hold.jpg" alt="Sai Kiran">
+                        </div>
+                        <h3>Sai Kiran</h3>
+                        <p>AI & ML Engineer</p>
+                    </div>
+                    <div class="team-member glass-card">
+                        <div class="member-image">
+                            <img src="static/hold.jpg" alt="Spandana">
+                        </div>
+                        <h3>Spandana</h3>
+                        <p>Full Stack Developer</p>
+                    </div>
+                    <div class="team-member glass-card">
+                        <div class="member-image">
+                            <img src="static/hold.jpg" alt="Vikas">
+                        </div>
+                        <h3>Vikas</h3>
+                        <p>AI & ML Engineer</p>
+                    </div>
+                    <div class="team-member glass-card">
+                        <div class="member-image">
+                            <img src="static/hold.jpg" alt="Gopi Chand">
+                        </div>
+                        <h3>Gopi Chand</h3>
+                        <p>Full Stack Developer</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section glass-card">
+                <h2>Contact Us</h2>
+                <p>Have questions? We'd love to hear from you.</p>
+                <a href="mailto:saikiran6101@gmail.com" class="contact-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    saikiran6101@gmail.com
+                </a>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
